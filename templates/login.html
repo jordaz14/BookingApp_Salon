@@ -1,0 +1,61 @@
+{% extends 'layout.html' %} {% block body %}
+<h1 class="text-white font-bold text-center text-xl mt-4 mb-1">
+  Log-in to your account
+</h1>
+<form action="/login" method="post">
+  <div
+    class="bg-white border-4 border-solid border-gray-300 rounded-md w-2/3 mx-auto mb-4 px-2 py-2 md:w-1/4"
+  >
+
+    <label for="email" class="font-bold">Email Address</label>
+    <input
+      type="email"
+      placeholder="Enter your email address..."
+      id="email"
+      name="email"
+      required
+      class="placeholder-gray-500 border-2 border-solid border-gray-300 bg-gray-200 rounded-md w-full pl-1 mb-2"
+    />
+
+    <label for="pw" class="font-bold">Password</label>
+    <input
+      type="password"
+      placeholder="Enter your password..."
+      id="pw"
+      name="pw"
+      required
+      class="placeholder-gray-500 border-2 border-solid border-gray-300 bg-gray-200 rounded-md w-full pl-1 mb-2"
+    />
+
+    <label for="cpw" class="font-bold">Confirm Password</label>
+    <input
+      type="password"
+      placeholder="Enter your password again..."
+      id="cpw"
+      name="cpw"
+      required
+      class="placeholder-gray-500 border-2 border-solid border-gray-300 bg-gray-200 rounded-md w-full pl-1 mb-2"
+    />
+
+    <input id="CPWcheck" type="checkbox" class="left-0"/>
+    <label for="CPWcheck">Show Passwords</label>
+
+    <div class="flex flex-col">
+
+      <button
+        id="Rbtn"
+        type="submit"
+        class="bg-gray-500 rounded-md text-gray-100 my-2 w-1/3 mx-auto"
+      >
+        Log-In
+      </button>
+      <p id="CSerror" class="text-center text-red-500"> {{error}} </p>
+      <p class="text-center">
+        Don't have an account? <br />
+        <a href="register" class="underline">Register</a>
+      </p>
+
+    </div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="my-4 w-2/3 mx-auto">
+  <h1 id="testID" class="text-white font-bold text-center text-xl mb-1">
+    Schedule an appointment
+  </h1>
+  <p class="text-white text-center">
+    Scheduling an appointment with our salon is a breeze! Whether you're looking
+    for a fresh haircut, a relaxing spa day, or a stunning new hairstyle, our
+    team is here to make it happen. Simply give us a call or visit our website
+    to book your appointment. Our friendly staff will assist you in choosing a
+    convenient date and time that suits your schedule. We can't wait to pamper
+    you and help you look and feel your best. See you soon at our salon!
+  </p>
+</div>
+<div class="flex flex-col items-center my-2">
+  <form
+    action="/calendar"
+    method="post"
+    class="flex flex-col items-center text-center bg-white h-max w-4/5 mb-8 lg:w-2/3 rounded-lg border-solid border-4 border-gray-500 relative lg:flex-row lg:px-2"
+  >
+    <div
+      class="relative my-2 border-solid border-4 border-gray-500 rounded-full h-60 w-60 lg: ml-2 lg:mr-12"
+    >
+      <img
+        src="{{url_for('static', filename='img/stylist1.jpg')}}"
+        class="object-cover object-top w-full h-full rounded-full"
+      />
+      <img />
+    </div>
+    <div class="mb-4 lg: flex-col lg:w-2/3">
+      <h2 class="font-bold">Katherine Hurtz</h2>
+      <p class="mb-2">
+        Katherine Hurtz is a seasoned hair stylist with over a decade of
+        experience, known for her artful precision in creating stunning haircuts
+        and colors.
+      </p>
+      <button
+        type="submit"
+        class="bg-gray-400 border-solid border-2 border-gray-500 rounded-md hover:bg-gray-300"
+      >
+        &nbsp;Schedule Appointment&nbsp;
+      </button>
+      <input type="hidden" name="empID" value="1" />
+    </div>
+  </form>
+  <form
+    action="/calendar"
+    method="post"
+    class="flex flex-col items-center text-center bg-white h-max w-4/5 mb-8 lg:w-2/3 rounded-lg border-solid border-4 border-gray-500 relative lg:flex-row lg:px-2"
+  >
+    <div
+      class="relative my-2 border-solid border-4 border-gray-500 rounded-full h-60 w-60 lg: ml-2 lg:mr-12"
+    >
+      <img
+        src="{{url_for('static', filename='img/stylist2.jpg')}}"
+        class="object-cover object-top w-full h-full rounded-full"
+      />
+      <img />
+    </div>
+    <div class="mb-4 lg: flex-col lg:w-2/3">
+      <h2 class="font-bold">Michelle Morales</h2>
+      <p class="mb-2">
+        Michelle Morales, the up-and-coming hair stylist, is rapidly gaining
+        recognition for her exceptional talent and creativity, making waves in
+        the beauty world.
+      </p>
+      <button
+        type="submit"
+        class="bg-gray-400 border-solid border-2 border-gray-500 rounded-md hover:bg-gray-300"
+      >
+        &nbsp;Schedule Appointment&nbsp;
+      </button>
+      <input type="hidden" name="empID" value="2" />
+    </div>
+  </form>
+  <form
+    action="/calendar"
+    method="post"
+    class="flex flex-col items-center text-center bg-white h-max w-4/5 mb-8 lg:w-2/3 rounded-lg border-solid border-4 border-gray-500 relative lg:flex-row lg:px-2"
+  >
+    <div
+      class="relative my-2 border-solid border-4 border-gray-500 rounded-full h-60 w-60 lg: ml-2 lg:mr-12"
+    >
+      <img
+        src="{{url_for('static', filename='img/stylist3.jpg')}}"
+        class="object-cover object-top w-full h-full rounded-full"
+      />
+      <img />
+    </div>
+    <div class="mb-4 lg: flex-col lg:w-2/3">
+      <h2 class="font-bold">Cassandra Davis</h2>
+      <p class="mb-2">
+        Cassandra Davis, the creative hair stylist, is known for her ability to
+        transform locks into captivating works of art, bringing a unique vision
+        to each client's tresses.
+      </p>
+      <button
+        type="submit"
+        class="bg-gray-400 border-solid border-2 border-gray-500 rounded-md hover:bg-gray-300"
+      >
+        &nbsp;Schedule Appointment&nbsp;
+      </button>
+      <input type="hidden" name="empID" value="3" />
+    </div>
+  </form>
+</div>
+{% endblock %}

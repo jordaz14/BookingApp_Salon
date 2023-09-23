@@ -1,0 +1,54 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="relative justify-center overflow-hidden" style="height: 600px">
+  <img
+    src="{{url_for('static', filename='img/salon.jpg')}}"
+    alt="Salon"
+    class="cursor-default blur-xs opacity-25 w-full h-full object-cover backdrop-blur-md hover:scale-125 transition duration-500"
+  />
+  <div
+    class="flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  >
+    <h1 class="text-white text-xl sm:text-4xl lg:text-6xl">
+      Corner Hair Salon
+    </h1>
+    <p class="text-white italic text-xl sm:text-2xl lg:text-4xl">
+      Leave it to us
+    </p>
+  </div>
+</div>
+
+<div class="text-white text-center mx-auto mt-6 mb-2 w-2/3">
+  <p>
+    Welcome to "Corner Hair Salon", where your hair's beauty and style take
+    center stage. Nestled in the heart of the city, our chic and contemporary
+    hair salon is a sanctuary for those seeking the ultimate in hair care and
+    transformation. At Corner Hair Salon, we understand that your hair is an
+    expression of your unique personality, and our team of experienced stylists
+    is dedicated to helping you unleash your inner beauty. Whether you're
+    looking for a fresh haircut, a bold new color, or a special hairstyle for
+    that special occasion, we've got you covered. Our salon is not just a place
+    for hair services; it's a space where you can relax, rejuvenate, and leave
+    feeling more confident and glamorous than ever before. Discover the magic of
+    Corner Hair Salon, where every strand of hair is a work of art, and every
+    client is a VIP.
+  </p>
+</div>
+
+<div class="text-white text-center mx-auto my-8 w-2/3">
+  <p>
+    <span class="block font-bold">Hours</span>
+    <span class="block">Tues-Thurs, 10am-3:30pm</span>
+    <span class="block font-bold">Contact</span>
+    <span class="block">(915) 667-9062</span>
+    <span class="block font-bold">Location</span>
+    <span class="block"
+      >5255 Woodrow Bean Transmountain Ste. 8A, El Paso, TX 79924</span
+    >
+  </p>
+</div>
+
+<div
+  id="map"
+  class="hidden md:flex md:h-64 md:w-2/3 md:rounded-lg md:mx-auto md:mb-8"
+></div>
+{% endblock %}

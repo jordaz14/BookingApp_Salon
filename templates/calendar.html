@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="my-4 w-2/3 mx-auto">
+    <h1 id="empName" class="text-white font-bold text-center text-xl mb-1">{{ empName }}'s Calendar</h1>
+    <p></p>
+  </div>
+<div class="w-4/5 flex flex-col mx-auto md:w-1/4"> 
+<div class="text-xl flex items-center justify-center">
+    <p id="dateMinus1" class="cursor-pointer select-none bg-white font-bold text-black rounded-full hover:bg-gray-300">&nbsp&nbsp&lt&nbsp&nbsp</p>
+    <p id="today" class="text-white text-center mx-6 w-4/5">Date</p>
+    <p id="datePlus1" class="cursor-pointer select-none bg-white font-bold text-black rounded-full hover:bg-gray-300">&nbsp&nbsp&gt&nbsp&nbsp</p>
+</div>
+<ul id="todayAvail" class="text-black text-center">
+{% for i in range(0, len) %}
+  <form action="/calendar/bookappt" method="post">
+  <button class="bg-white rounded-md my-2 w-4/5 font-bold hover:bg-gray-300">{{ empAvail[i] }}</button>
+  <input type="hidden" name="bookBtn{{i}}" value="{{ empAvail[i] }}"> 
+  </form>
+{% endfor %}
+</ul>
+<div id="forms" class="text-center">
+
+</div>
+</div>
+{% endblock %}

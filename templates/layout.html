@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/output.css')}}" />
+    <link rel="icon" href="{{url_for('static', filename='img/logo.png')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
+  </head>
+
+  <body class="font-Vollkorn bg-black max-w-{100%} overflow-x-hidden min-h-{100vh} flex flex-col">
+    <div id="modal" class="xyz-in bg-black w-screen h-full opacity-75 fixed z-20 hidden" xyz="fade"></div>
+    <header class="w-screen bg-black sticky top-0 z-10">
+    <div class="xyz-in mr-2 sm:flex sm:justify-between sm:mr-4" xyz="up-100% duration-10">
+    <div class="flex items-center justify-between px-2 py-2">
+      <div>
+        <a class=" text-white font-bold text-xl" href="/"
+        >Corner Hair Salon</a>
+      </div>
+      <div class="mr-2 sm:hidden">
+        <button type="button" class="block" onclick="hamburgerMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-current text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+       </button>
+      </div>
+      </div>
+      <div class="text-white px-1 pb-1 hidden sm:flex sm:items-center sm:pb-0" id="myLinks">
+        <a href="/service" class="block px-1 rounded hover:bg-gray-500 ">Services</a>
+        <a href="/appt" class="mt-1 block px-1 rounded hover:bg-gray-500 sm:mt-0 sm:ml-2">Book an Appointment</a>
+        <a href="/gallery" class="mt-1 block px-1 rounded hover:bg-gray-500 sm:mt-0 sm:ml-2">Photo Gallery</a>
+        {% if session["user_id"] %}
+          <a href="/logout" class="mt-1 block px-1 rounded hover:bg-gray-500 sm:mt-0 sm:ml-2">Log-out</a>
+        {% else %}
+          <a href="/register" class="mt-1 block px-1 rounded hover:bg-gray-500 sm:mt-0 sm:ml-2">Register/Log-in</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="flex flex-col space-y-1">
+      <div class="bg-white w-full xyz-in" style="height: 3px" xyz="left-100% duration-10"></div>
+      <div class="bg-white w-full xyz-in" style="height: 2px" xyz="left-100% duration-20"></div>
+      <div class="bg-white w-full xyz-in" style="height: 1px" xyz="left-100% duration-30"></div>
+    </div>
+  </header>
+
+  {% block body %}{% endblock %}
+
+      <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
+ 
+</html>

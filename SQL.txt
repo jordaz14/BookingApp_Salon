@@ -1,0 +1,130 @@
+// Creates users table
+
+CREATE TABLE users (
+    user_id serial PRIMARY KEY,
+    fname TEXT NOT NULL,
+    lname TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    hashpw TEXT NOT NULL,
+    confirmed BOOL NOT NULL
+);
+
+// Creates services table 
+
+CREATE TABLE services (
+    service_id SERIAL PRIMARY KEY,
+    service TEXT NOT NULL,
+    description TEXT NOT NULL,
+    price INT NOT NULL
+); 
+
+INSERT INTO services (service, description, price)
+VALUES ('Haircut', 'Men''s Cut', 20);
+INSERT INTO services (service, description, price)
+VALUES ('Haircut', 'Womens''s Cut', 20); 
+INSERT INTO services (service, description, price)
+VALUES ('Haircut', 'Children''s Cut', 10); 
+INSERT INTO services (service, description, price)
+VALUES ('Haircut', 'Specialty Cut', 30); 
+
+INSERT INTO services (service, description, price)
+VALUES ('Color', 'Full Color', 40);
+INSERT INTO services (service, description, price)
+VALUES ('Color', 'Color Retouch', 20);
+INSERT INTO services (service, description, price)
+VALUES ('Color', 'Highlights', 30);
+
+INSERT INTO services (service, description, price)
+VALUES ('Styling', 'Blow Dry', 15);
+INSERT INTO services (service, description, price)
+VALUES ('Styling', 'Perm', 25);
+INSERT INTO services (service, description, price)
+VALUES ('Styling', 'Straightening', 25);
+
+INSERT INTO services (service, description, price)
+VALUES ('Other', 'Waxing', 20);
+INSERT INTO services (service, description, price)
+VALUES ('Other', 'Manicure', 30);
+INSERT INTO services (service, description, price)
+VALUES ('Other', 'Extensions', 35);
+
+// Create employees table
+
+CREATE TABLE employees (
+    employee_id SERIAL PRIMARY KEY,
+    employeeFName TEXT NOT NULL,
+    employeeLName TEXT NOT NULL
+);
+
+INSERT INTO employees (employeeFName, employeeLName) 
+VALUES ('Katherine', 'Hurtz');
+INSERT INTO employees (employeeFName, employeeLName) 
+VALUES ('Michelle', 'Morales');
+INSERT INTO employees (employeeFName, employeeLName) 
+VALUES ('Cassandra', 'Davis');
+
+// Create employee availability table
+
+CREATE TABLE employeesAvailable (
+    employee_id INT REFERENCES employees(employee_id),
+    dayOfWeek TEXT NOT NULL,
+    startTime TIME NOT NULL,
+    endTime TIME NOT NULL
+); 
+
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Monday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Tuesday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Wednesday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Thursday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Friday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Saturday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (1, 'Sunday', '13:00', '15:00');
+
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Monday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Tuesday', '09:00', '17:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Wednesday', '12:00', '15:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Thursday', '12:00', '15:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Friday', '09:00', '12:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Saturday', '12:00', '16:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (2, 'Sunday', '14:00', '15:00');
+
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Monday', '12:00', '15:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Tuesday', '12:00', '15:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Wednesday', '12:00', '15:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Thursday', '09:00', '12:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Friday', '09:00', '12:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Saturday', '08:00', '12:00');
+INSERT INTO employeesAvailable (employee_id, dayOfWeek, startTime, endTime)
+VALUES (3, 'Sunday', '10:00', '16:00');
+
+// Create table of booked time slots
+
+CREATE TABLE bookedTimes (
+    user_id INT NOT NULL REFERENCES users(user_id),
+    emp_id INT NOT NULL REFERENCES employees(employee_id),
+    apptYear TEXT NOT NULL,
+    apptMonth TEXT NOT NULL,
+    apptDay TEXT NOT NULL,
+    apptTime TIME NOT NULL,
+    registrantType TEXT NOT NULL
+); 

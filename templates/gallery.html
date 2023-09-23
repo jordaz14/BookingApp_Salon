@@ -1,0 +1,77 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="my-4 w-2/3 mx-auto">
+  <h1 class="text-white font-bold text-center text-xl mb-1">Photo Gallery</h1>
+  <p class="text-white text-center">
+    Our high-quality haircuts are expertly crafted to enhance your style and
+    boost your confidence. Don't believe us? See below!
+  </p>
+</div>
+<div class="grid grid-cols-1 mb-6 mx-6 md:grid-cols-3 gap-6">
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair1.jpg')}}"
+      class="HairPhoto cursor-pointer object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="xyz-in mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair1.jpg')}}" xyz="fade"></img>
+        <p class="HairExit xyz-in cursor-pointer bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl" xyz="fade">&#215;</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair2.jpg')}}"
+      class="HairPhoto object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair2.jpg')}}"></img>
+        <p class="HairExit bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl">&#215;</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair3.jpg')}}"
+      class="HairPhoto object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair3.jpg')}}"></img>
+        <p class="HairExit bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl">&#215;</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair4.jpg')}}"
+      class="HairPhoto object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair4.jpg')}}"></img>
+        <p class="HairExit bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl">&#215;</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair5.jpg')}}"
+      class="HairPhoto object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair5.jpg')}}"></img>
+        <p class="HairExit bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl">&#215;</p>
+    </div>
+  </div>
+  <div class="bg-white rounded-md h-96">
+    <img
+      src="{{url_for('static', filename='img/hair6.jpg')}}"
+      class="HairPhoto object-cover w-full h-full rounded-md hover:border-solid hover:border-4 hover:border-gray-500"
+    />
+    <img />
+    <div class="HairMM fixed w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden md:w-5/6">
+        <img class="mx-auto md:max-h-[46rem] md:object-contain" src="{{url_for('static', filename='img/hair6.jpg')}}"></img>
+        <p class="HairExit bg-gray-500 hover:bg-gray-400 mx-auto w-10 rounded-md mt-2 text-white text-center text-4xl">&#215;</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
